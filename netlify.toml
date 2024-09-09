@@ -3,4 +3,4 @@
   publish = "build"
 
 [functions]
-  "server.js" = {"handler": "server"}
+  "server.js" = {"handler" = "server"}
