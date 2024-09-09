@@ -1,7 +1,6 @@
 import fetchNews from "../utils/fetchNews.js";
 
 const getNewsFiltered = async (req, res) => {
-    console.log(req.body);
     try {
         const json = await fetchNews(req.body);
         res.status(200).json(json);

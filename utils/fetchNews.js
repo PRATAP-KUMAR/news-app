@@ -1,22 +1,25 @@
-// import fetch from "node-fetch";
+import fetch from "node-fetch";
 import mockData from "../mockData.js";
-import nodeFetch from 'node-fetch';
 
-const fetchNews = async (queryParams = {q: 'software'}) => {
+const fetchNews = async (queryParams = { q: 'software' }) => {
     try {
         let uri = "https://gnews.io/api/v4/search"
 
         const url = new URL(uri);
         url.search = new URLSearchParams({ ...queryParams, apikey: process.env.KEY });
-        const response = await nodeFetch(url, {
+        const response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json' },
-            timeout: 3000
         });
         const json = await response.json();
-        return json;
+        if (response.ok) {
+            return json;
+        } else {
+            console.log(json.errors);
+        }
     } catch (error) {
+        console.log(`${error.message} fetch failed, returning mock data`);
         return mockData;
     }
 }

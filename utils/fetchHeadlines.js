@@ -1,4 +1,3 @@
-// import fetch from "node-fetch";
 import mockData from "../mockData.js";
 import fetch from 'node-fetch';
 
@@ -14,8 +13,13 @@ const fetchHeadlines = async (queryParams = { category: 'general' }) => {
             headers: { 'Content-Type': 'application/json' },
         });
         const json = await response.json();
-        return json;
+        if (response.ok) {
+            return json;
+        } else {
+            console.log(json.errors);
+        }
     } catch (error) {
+        console.log('fetch failed, returning mock data')
         return mockData;
     }
 }
