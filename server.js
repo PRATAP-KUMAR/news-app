@@ -11,7 +11,7 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://pratap-panabaka-express-api.netlify.app/'],
+    origin: ['http://localhost:5173', 'https://pratap-panabaka-aconews.web.app/'],
 }));
 
 // news
