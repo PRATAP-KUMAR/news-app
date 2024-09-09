@@ -2,5 +2,5 @@
   command = "npm run build"
   publish = "build"
 
-[funcions]
+[functions]
   "server.js" = {"handler": "server"}
