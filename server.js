@@ -10,7 +10,9 @@ const app = express();
 // middleware
 dotenv.config();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://pratap-panabaka-express-api.netlify.app/'],
+}));
 
 // news
 app.use('/news', news);
@@ -22,5 +24,3 @@ app.listen('3003', () => {
     console.log('Welcome to news-app');
     console.log('connected to port 3003');
 })
-
-export default app;
