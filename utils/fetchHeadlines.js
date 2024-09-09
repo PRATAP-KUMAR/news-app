@@ -17,6 +17,7 @@ const fetchHeadlines = async (queryParams = { category: 'general' }) => {
             return json;
         } else {
             console.log(json.errors);
+            return mockData;
         }
     } catch (error) {
         console.log('fetch failed, returning mock data')

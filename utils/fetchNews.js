@@ -17,6 +17,7 @@ const fetchNews = async (queryParams = { q: 'software' }) => {
             return json;
         } else {
             console.log(json.errors);
+            return mockData;
         }
     } catch (error) {
         console.log(`${error.message} fetch failed, returning mock data`);

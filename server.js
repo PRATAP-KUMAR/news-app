@@ -22,3 +22,5 @@ app.listen('3003', () => {
     console.log('Welcome to news-app');
     console.log('connected to port 3003');
 })
+
+export default app;
