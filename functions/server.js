@@ -16,10 +16,10 @@ app.use(cors({
 }));
 
 // news
-app.use('/news', news);
+app.use('/.netlify/functions/news', news);
 
 // headlines
-app.use('/headlines', headlines);
+app.use('/.netlify/functions/headlines', headlines);
 
 app.listen('3003', () => {
     console.log('Welcome to news-app');
