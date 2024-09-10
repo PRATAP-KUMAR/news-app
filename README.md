@@ -14,7 +14,7 @@ git clone https://github.com/PRATAP-KUMAR/news-app-back-end/
 cd news-app-back-end
 npm install
 touch .env # creating dot env file for environment varialbles
-echo >> KEY=your-gnews-apikey # change the key with yours gnews Authentication KEY (only 100 requests per day, so use yours)
+echo KEY=8482310fea912c8f5b5c28987d43094f >> .env # (only 100 requests per day, if over, Fetch response will be an array of error messages)
 npm run dev
 ```
 
