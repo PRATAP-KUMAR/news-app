@@ -5,7 +5,7 @@
 ### Prerequisite packages
 
 1. when you start running the commands below, terminal will prompt if any package is required.  
-2. In general when a dev is trying to use this backend, packages like git, node, npm are already in their systems.
+2. packages like git, node, npm.
 
 ### to run locally
 
