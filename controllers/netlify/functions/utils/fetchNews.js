@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import mockData from "../mockData.js";
+import { newsData } from "../../../../newsData.js";
 
 const fetchNews = async (queryParams = { q: 'software' }) => {
     try {

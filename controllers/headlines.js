@@ -1,4 +1,4 @@
-import mockData from "../mockData.js";
+import mockData from "../newsData.js";
 import fetchHeadlines from "../utils/fetchHeadlines.js";
 
 const getHeadlinesFiltered = async (req, res) => {

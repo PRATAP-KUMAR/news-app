@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import mockData from "../mockData.js";
+import newsData from "../newsData.js";
 
 const fetchNews = async (queryParams = { q: 'software' }) => {
     try {
@@ -17,11 +17,11 @@ const fetchNews = async (queryParams = { q: 'software' }) => {
             return json;
         } else {
             console.log(json.errors);
-            return mockData;
+            return newsData;
         }
     } catch (error) {
         console.log(`${error.message} fetch failed, returning mock data`);
-        return mockData;
+        return newsData;
     }
 }
 
