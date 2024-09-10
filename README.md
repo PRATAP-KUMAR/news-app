@@ -26,3 +26,5 @@ connected to port 3003
 
 Then keep this terminal in a seperate workspace so that this will not disturb your other windows and this server needs to be running until you close the frontend
 [Aconews](https://pratap-panabaka-aconews.web.app/).
+
+![image](https://github.com/user-attachments/assets/495e20d9-74c8-41b8-b6ee-7a32923a0f71)
