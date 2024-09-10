@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import news from './routes/news.js';
 import headlines from './routes/headlines.js';
+import serverless from "serverless-http";
 
 // express app
 const app = express();
@@ -15,12 +16,9 @@ app.use(cors({
 }));
 
 // news
-app.use('/news', news);
+app.use('/api/news', news);
 
 // headlines
-app.use('/headlines', headlines);
+app.use('/api/headlines', headlines);
 
-app.listen('3003', () => {
-    console.log('Welcome to news-app');
-    console.log('connected to port 3003');
-})
+export const handler = serverless(app);
