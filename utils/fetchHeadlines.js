@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import headlinesData from '../headlinesData.js';
 
-const fetchHeadlines = async (queryParams = { category: 'general' }) => {
+const fetchHeadlines = async (queryParams = null) => {
     try {
         let uri = "https://gnews.io/api/v4/top-headlines";
 
@@ -20,7 +20,7 @@ const fetchHeadlines = async (queryParams = { category: 'general' }) => {
             return headlinesData;
         }
     } catch (error) {
-        console.log('fetch failed, returning mock data')
+        console.log(`${error.message} fetch failed, returning mock data`);
         return headlinesData;
     }
 }
