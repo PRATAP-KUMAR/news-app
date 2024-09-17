@@ -1,9 +1,8 @@
 import fetch from "node-fetch";
-import newsData from "../newsData.js";
 
-const fetchNews = async (queryParams = { q: 'software' }) => {
+const fetchFromGNews = async (endpoint, queryParams) => {
     try {
-        let uri = "https://gnews.io/api/v4/search"
+        let uri = `https://gnews.io/api/v4/${endpoint}`;
 
         const url = new URL(uri);
         url.search = new URLSearchParams({ ...queryParams, apikey: process.env.KEY });
@@ -15,14 +14,11 @@ const fetchNews = async (queryParams = { q: 'software' }) => {
         const json = await response.json();
         if (response.ok) {
             return json;
-        } else {
-            console.log(json.errors);
-            return newsData;
         }
     } catch (error) {
-        console.log(`${error.message} fetch failed, returning mock data`);
-        return newsData;
+        console.log(error);
+        return { message: "There is some error fetching data" }
     }
 }
 
-export default fetchNews;
+export default fetchFromGNews;

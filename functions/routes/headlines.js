@@ -1,12 +1,9 @@
 import express from 'express';
-import { getHeadlines, getHeadlinesFiltered } from '../controllers/headlines.js';
+import { getHeadlines } from '../controllers/headlines.js';
 
 const headlines = express.Router();
 
-// default
-headlines.get('/', getHeadlines);
-
-// post for filters
-headlines.post('/', getHeadlinesFiltered)
+// post only bcoz we are sending query parameters for all cases
+headlines.post('/', getHeadlines)
 
 export default headlines;

@@ -1,12 +1,9 @@
 import express from 'express';
-import { getNews, getNewsFiltered } from '../controllers/news.js';
+import { getNews } from '../controllers/news.js';
 
 const news = express.Router();
 
-// default
-news.get('/', getNews)
-
-// post for search
-news.post('/', getNewsFiltered)
+// post only bcoz we are sending query parameters for all cases
+news.post('/', getNews)
 
 export default news;

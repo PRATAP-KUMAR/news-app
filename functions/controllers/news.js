@@ -1,21 +1,16 @@
-import fetchNews from "../utils/fetchNews.js";
-
-const getNewsFiltered = async (req, res) => {
-    try {
-        const json = await fetchNews(req.body);
-        res.status(200).json(json);
-    } catch (error) {
-        console.log(error.message);
-    }
-}
+import fetchFromGNews from "../utils/fetchFromGNews";
 
 const getNews = async (req, res) => {
+
+    const endpoint = 'search';
+    const queryParams = req.body;
+
     try {
-        const json = await fetchNews();
+        const json = await fetchFromGNews(endpoint, queryParams);
         res.status(200).json(json);
     } catch (error) {
         console.log(error.message);
     }
 }
 
-export { getNews, getNewsFiltered }
+export { getNews }

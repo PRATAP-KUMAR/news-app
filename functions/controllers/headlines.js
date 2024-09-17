@@ -1,22 +1,16 @@
-import mockData from "../mockData.js";
-import fetchHeadlines from "../utils/fetchHeadlines.js";
+import fetchFromGNews from "../utils/fetchFromGNews";
 
-const getHeadlinesFiltered = async (req, res) => {
+const getHeadlines = async (req, res) => {
+
+    const endpoint = 'top-headlines';
+    const queryParams = req.body;
+
     try {
-        const json = await fetchHeadlines(req.body);
+        const json = await fetchFromGNews(endpoint, queryParams);
         res.status(200).json(json);
     } catch (error) {
         console.log(error.message);
     }
 }
 
-const getHeadlines = async (req, res) => {
-    try {
-        const json = await fetchHeadlines();
-        res.status(200).json(json);
-    } catch (error) {
-        res.status(200).json(mockData);
-    }
-}
-
-export { getHeadlines, getHeadlinesFiltered }
+export { getHeadlines }
